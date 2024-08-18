@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neumorphism Ripple</title>
+    <style>
+      :root {
+        --neumorphism-color: #eff2f5;
+        --animation-delay-step: 500ms;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: --neumorphism-color;
+      }
+
+      button {
+        position: absolute;
+        border: none;
+
+        background-color: --neumorphism-color;
+        border-radius: 100%;
+        box-shadow: inset 10px 10px 20px #a5a7a9, inset -10px -10px 20px #ffffff;
+
+        animation: ripple 5s infinite;
+      }
+
+      button:nth-child(1) {
+        animation-delay: calc(1 * var(--animation-delay-step));
+      }
+      button:nth-child(2) {
+        animation-delay: calc(2 * var(--animation-delay-step));
+      }
+      button:nth-child(3) {
+        animation-delay: calc(3 * var(--animation-delay-step));
+      }
+      button:nth-child(4) {
+        animation-delay: calc(4 * var(--animation-delay-step));
+      }
+      button:nth-child(5) {
+        animation-delay: calc(5 * var(--animation-delay-step));
+      }
+
+      @keyframes ripple {
+        0% {
+          width: 0px;
+          height: 0px;
+          opacity: 1;
+        }
+
+        100% {
+          width: 800px;
+          height: 400px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+  </body>
+</html>
