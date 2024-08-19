@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Glow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color-inner: rgba(0, 0, 0, 0.95);
+        --bg-color-outer: rgba(0, 0, 0, 0.7);
+        --text-color: #f5f5f5;
+        --glow-color: #30e3ca;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-image: radial-gradient(
+            circle,
+            var(--bg-color-inner),
+            var(--bg-color-outer)
+          ),
+          url("./wall.webp");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .neon-text {
+        font-family: "Dancing Script", cursive;
+        font-size: 120px;
+        color: var(--text-color);
+        text-shadow: 0 0 7px var(--text-color), 0 0 13px var(--text-color),
+          0 0 20px var(--text-color), 0 0 40px var(--glow-color),
+          0 0 80px var(--glow-color), 0 0 120px var(--glow-color),
+          0 0 160px var(--glow-color), 0 0 200px var(--glow-color);
+        animation: flicker-2 2s linear infinite both;
+      }
+
+      @keyframes flicker-2 {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        41.99% {
+          opacity: 1;
+        }
+        42% {
+          opacity: 0;
+        }
+        43% {
+          opacity: 0;
+        }
+        43.01% {
+          opacity: 1;
+        }
+        45.99% {
+          opacity: 1;
+        }
+        46% {
+          opacity: 0;
+        }
+        46.9% {
+          opacity: 0;
+        }
+        46.91% {
+          opacity: 1;
+        }
+        51.99% {
+          opacity: 1;
+        }
+        52% {
+          opacity: 0;
+        }
+        52.8% {
+          opacity: 0;
+        }
+        52.81% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="neon-text">Frontman</h1>
+  </body>
+</html>
